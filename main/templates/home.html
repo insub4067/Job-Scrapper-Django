@@ -1,0 +1,36 @@
+{%extends 'base.html'%}
+
+{%block content%}
+<h1 class='custom center'>Are you looking for a job?</h1>
+<form class="d-flex" action="" method="get" style="margin-top: 5%;">
+    <input class="form-control me-2" type="search" placeholder="serach" aria-label="Search" name="word">
+    <button class="btn btn-outline-primary" type="submit">Search</button>
+</form>
+<!-- identify resources -->
+<div class="center">
+    <img src="https://i.stack.imgur.com/bhvZy.png" alt="" style="max-width: 25%; height: auto;">
+    <img src="https://www.blocksocial.com/wp-content/uploads/2019/07/remoteok-logo.jpg" alt=""
+        style="max-width: 30%; height: auto;">
+    <img src="https://kaciebusiness.com/wp-content/uploads/2020/09/weworkremotely.png" alt=""
+        style="max-width: 20%; height: auto;">
+</div>
+<!-- subjects -->
+<div class="container">
+    <div class="row">
+        {% for key in keywords %}
+        <div class="col-4">
+            <div class="card" style="width: 100%; height: auto;">
+                <a href="/?word={{key.name}}">
+                    <img src="{{key.img}}" class="card-img-top" alt="...">
+                </a>
+            </div>
+            <div class="card" style="width: 100%; height: auto;">
+                <a href=" /?word={{key.name}}" class="btn btn-primary">Search</a>
+            </div>
+        </div>
+        {% endfor %}
+
+    </div>
+
+</div>
+{%endblock%}

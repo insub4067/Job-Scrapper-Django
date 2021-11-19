@@ -1,0 +1,29 @@
+{%extends 'base.html'%}
+
+{%block content%}
+<div class="customSmaller" style="float: left;">found {{amount}} results for {{word}}:</div>
+<p></p>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">title</th>
+            <th scope="col">company</th>
+            <th scope="col">location</th>
+            <th scope="col">link</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for job in jobs %}
+        <tr>
+            <th>{{job.title}}</th>
+            <td>{{job.company}}</td>
+            <td>{{job.location}}</td>
+            <td>
+                <a href="{{job.link}}" target="_blank">Apply</a>
+            </td>
+        </tr>
+        {% endfor%}
+    </tbody>
+</table>
+
+{%endblock%}
